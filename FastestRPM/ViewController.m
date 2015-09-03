@@ -29,12 +29,22 @@
 }
 
 - (IBAction)calculatePanSpeed:(UIPanGestureRecognizer *)sender {
-    CGPoint output = [sender velocityInView:self.view];
-    float velocity = sqrtf(output.x*output.x + output.y+output.y);
-    
-    float degrees = -230 + velocity*180/1000;
-    self.needleContainer.transform = CGAffineTransformMakeRotation(degrees*M_PI/180);
-    
+    switch (sender.state) {
+        case UIGestureRecognizerStateChanged: {
+            CGPoint output = [sender velocityInView:self.view];
+            float velocity = sqrtf(output.x*output.x + output.y+output.y);
+            
+            float degrees = -230 + velocity*180/1000;
+            self.needleContainer.transform = CGAffineTransformMakeRotation(degrees*M_PI/180);
+            break;
+        }
+        case UIGestureRecognizerStateEnded:
+            self.needleContainer.transform = CGAffineTransformMakeRotation(-230*M_PI/180);
+            break;
+        default:
+            self.needleContainer.transform = CGAffineTransformMakeRotation(-230*M_PI/180);
+            break;
+    }
 }
 
 @end
