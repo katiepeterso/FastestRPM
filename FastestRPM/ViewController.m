@@ -10,6 +10,7 @@
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *needle;
+@property (strong, nonatomic) IBOutlet UIView *needleContainer;
 
 @end
 
@@ -17,7 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    float degrees = -230;
+    self.needleContainer.transform = CGAffineTransformMakeRotation(degrees*M_PI/180);
     // Do any additional setup after loading the view, typically from a nib.
 }
 

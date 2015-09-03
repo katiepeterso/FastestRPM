@@ -16,27 +16,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Speedometer" translatesAutoresizingMaskIntoConstraints="NO" id="u6w-zr-nIu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Speedometer" translatesAutoresizingMaskIntoConstraints="NO" id="u6w-zr-nIu">
                                 <rect key="frame" x="215" y="215" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="Slg-Pu-1ic"/>
+                                    <constraint firstAttribute="width" constant="170" id="VCq-SC-vUw"/>
+                                </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g54-MC-nuK" userLabel="NeedleContainer">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g54-MC-nuK" userLabel="NeedleContainer">
                                 <rect key="frame" x="215" y="215" width="170" height="170"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Needle" translatesAutoresizingMaskIntoConstraints="NO" id="ZfV-So-Igg">
-                                        <rect key="frame" x="54" y="38" width="108" height="108"/>
+                                        <rect key="frame" x="37" y="25.5" width="133" height="133"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="Dhr-PE-wdT"/>
+                                    <constraint firstAttribute="height" constant="170" id="ovV-hl-wAb"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="u6w-zr-nIu" firstAttribute="top" secondItem="g54-MC-nuK" secondAttribute="bottom" constant="-170" id="6i6-Cu-xfE"/>
-                            <constraint firstItem="u6w-zr-nIu" firstAttribute="leading" secondItem="g54-MC-nuK" secondAttribute="trailing" constant="-170" id="jgc-Vy-C5m"/>
+                            <constraint firstAttribute="centerX" secondItem="g54-MC-nuK" secondAttribute="centerX" id="Fah-tk-8T7"/>
+                            <constraint firstAttribute="centerY" secondItem="g54-MC-nuK" secondAttribute="centerY" id="Kwl-1w-tD5"/>
+                            <constraint firstAttribute="centerX" secondItem="u6w-zr-nIu" secondAttribute="centerX" id="ds9-DU-b4d"/>
+                            <constraint firstAttribute="centerY" secondItem="u6w-zr-nIu" secondAttribute="centerY" id="r6W-wc-ma0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="needle" destination="ZfV-So-Igg" id="VqD-8J-aVK"/>
+                        <outlet property="needleContainer" destination="g54-MC-nuK" id="Pcu-HO-xyd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
