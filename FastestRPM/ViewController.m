@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-@property (strong, nonatomic) IBOutlet UIImageView *needle;
+
 @property (strong, nonatomic) IBOutlet UIView *needleContainer;
 
 @end
@@ -26,6 +26,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)calculatePanSpeed:(UIPanGestureRecognizer *)sender {
+    CGPoint output = [sender velocityInView:self.view];
+    float velocity = sqrtf(output.x*output.x + output.y+output.y);
+    
+    float degrees = -230 + velocity*180/1000;
+    self.needleContainer.transform = CGAffineTransformMakeRotation(degrees*M_PI/180);
+    
 }
 
 @end

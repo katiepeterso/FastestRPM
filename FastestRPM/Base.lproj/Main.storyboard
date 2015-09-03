@@ -38,20 +38,30 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="g54-MC-nuK" secondAttribute="centerX" id="Fah-tk-8T7"/>
                             <constraint firstAttribute="centerY" secondItem="g54-MC-nuK" secondAttribute="centerY" id="Kwl-1w-tD5"/>
                             <constraint firstAttribute="centerX" secondItem="u6w-zr-nIu" secondAttribute="centerX" id="ds9-DU-b4d"/>
                             <constraint firstAttribute="centerY" secondItem="u6w-zr-nIu" secondAttribute="centerY" id="r6W-wc-ma0"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aGY-72-tFp" appends="YES" id="UEi-HT-PlD"/>
+                            <outletCollection property="gestureRecognizers" destination="aGY-72-tFp" appends="YES" id="mHF-Tm-ELb"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="needle" destination="ZfV-So-Igg" id="VqD-8J-aVK"/>
                         <outlet property="needleContainer" destination="g54-MC-nuK" id="Pcu-HO-xyd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer delaysTouchesEnded="NO" minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="aGY-72-tFp">
+                    <connections>
+                        <action selector="calculatePanSpeed:" destination="vXZ-lx-hvc" id="NiN-fU-C6U"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="518" y="335"/>
         </scene>
     </scenes>
     <resources>
